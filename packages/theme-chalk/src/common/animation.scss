@@ -1,0 +1,50 @@
+@keyframes vu-slide-bottom-enter {
+    from {
+      transform: translate3d(0, 100%, 0);
+    }
+  }
+  
+  @keyframes vu-slide-bottom-leave {
+    to {
+      transform: translate3d(0, 100%, 0);
+    }
+  }
+  
+  @keyframes vu-fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes vu-fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+  .vu-fade {
+    &-enter-active {
+      animation: .3s vu-fade-in;
+    }
+  
+    &-leave-active {
+      animation: .3s vu-fade-out;
+    }
+  }
+  
+  .vu-slide-bottom {
+    &-enter-active {
+      animation: vu-slide-bottom-enter .3s both ease;
+    }
+  
+    &-leave-active {
+      animation: vu-slide-bottom-leave .3s both ease;
+    }
+  }
+  

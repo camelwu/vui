@@ -1,0 +1,101 @@
+@import './common/var.scss';
+@import "./mixins/mixins";
+
+@include b(picker) {
+  overflow: hidden;
+  user-select: none;
+  position: relative;
+  background-color: $white;
+
+  @include e(toolbar) {
+    display: flex;
+    height: 40px;
+    line-height: 40px;
+    justify-content: space-between;
+  }
+
+  @include e(cancel){
+    color: $blue;
+    padding: 0 15px;
+
+    &:active {
+      background-color: $active-color;
+    }
+  }
+  @include e(confirm) {
+    color: $blue;
+    padding: 0 15px;
+
+    &:active {
+      background-color: $active-color;
+    }
+  }
+
+  @include e(title) {
+    max-width: 50%;
+    text-align: center;
+  }
+
+  @include e(columns) {
+    display: flex;
+    position: relative;
+  }
+
+  @include e(loading) {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    position: absolute;
+    background-color: rgba(255,255,255,.9);
+
+    circle {
+      stroke: $blue;
+    }
+  }
+
+  .vu-picker__loading .vu-loading{
+    top: 50%;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+    pointer-events: none;
+    transform: translateY(-50%);
+  }
+
+  .vu-loading__spinner{
+      width: 30px;
+  }
+
+  @include e(frame) {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+    pointer-events: none;
+    transform: translateY(-50%);
+  }
+
+  &-column {
+    flex: 1;
+    overflow: hidden;
+    font-size: 17px;
+    text-align: center;
+
+    li {
+      padding: 0 5px;
+      color: $gray-darker;
+    }
+
+    li.vu-picker-column--selected {
+        color: $black;
+    }
+
+    li.vu-picker-column--disabled {
+        opacity: .3;
+    }
+  }
+}

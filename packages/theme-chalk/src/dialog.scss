@@ -1,0 +1,83 @@
+@import './common/var.scss';
+
+.vu-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 270px;
+  font-size: 15px;
+  overflow: hidden;
+  transition: .2s;
+  border-radius: 10px;
+  background-color: $white;
+  transform: translate3d(-50%, -50%, 0);
+
+  &__header {
+    font-size: 17px;
+    padding: 20px 0 0;
+    text-align: center;
+
+    &--no-message {
+      padding: 46px 37px;
+    }
+  }
+
+  &__content {
+    padding: 10px 37px 20px;
+    text-align: center;
+
+    &::after {
+      border-bottom-width: 1px;
+    }
+
+    &--no-title {
+      padding: 30px 37px;
+    }
+  }
+
+  &__message {
+    line-height: 1.5;
+
+    &--withtitle {
+      color: #5A6066;
+      font-size: 14px;
+    }
+  }
+
+  &__footer {
+    overflow: hidden;
+
+    &.is-twobtn {
+      display: flex;
+
+      .vu-button {
+        flex: 1;
+      }
+    }
+  }
+
+  .vu-button {
+    height: 44px;
+    border: 0;
+    font-size: 15px;
+  }
+
+  &__confirm {
+    background-image: linear-gradient(-90deg, #FA1E8C 0%, #FC1E56 100%);
+    border-radius: 0;
+    &,
+    &:active {
+      color: #fff;
+    }
+  }
+
+  &-bounce-enter {
+    opacity: 0;
+    transform: translate3d(-50%, -50%, 0) scale(0.7);
+  }
+
+  &-bounce-leave-active {
+    opacity: 0;
+    transform: translate3d(-50%, -50%, 0) scale(0.9);
+  }
+}
